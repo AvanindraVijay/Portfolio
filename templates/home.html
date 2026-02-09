@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+
+{% block title %}{% if profile %}{{ profile.name }} | {{ profile.title }}{% else %}Avanindra Vijay | Software Engineer & AI Specialist{% endif %}{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span class="badge-text">
+                    {% if profile and profile.available_for_work %}
+                        Available for Opportunities
+                    {% else %}
+                        Available for Opportunities
+                    {% endif %}
+                </span>
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="title-greeting">Hi, I'm</span>
+                <span class="title-name">{% if profile %}{{ profile.name }}{% else %}Avanindra Vijay{% endif %}</span>
+            </h1>
+            
+            <p class="hero-subtitle">{% if profile %}{{ profile.title }}{% else %}Software Engineer & Data Scientist{% endif %}</p>
+            
+            <p class="hero-description">
+                {% if profile %}
+                    {{ profile.about_intro }}
+                {% else %}
+                    Specializing in AI-powered solutions, machine learning, and data analytics.
+                    Currently building intelligent LLM systems at BISAG-N (MeitY), with expertise
+                    in RAG pipelines, conversational AI, and full-stack development.
+                {% endif %}
+            </p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-value">{% if profile %}{{ profile.cgpa }}{% else %}8.66{% endif %}</div>
+                    <div class="stat-label">CGPA</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">{% if profile %}{{ profile.projects_count }}{% else %}5{% endif %}+</div>
+                    <div class="stat-label">Major Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">{% if profile %}{{ profile.certifications_count }}{% else %}7{% endif %}+</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">{% if profile %}{{ profile.data_records_processed }}{% else %}50K+{% endif %}</div>
+                    <div class="stat-label">Data Records Processed</div>
+                </div>
+            </div>
+            
+            <div class="hero-actions">
+                <a href="/portfolio" class="btn btn-primary">
+                    <span>View My Work</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+                <a href="/contact" class="btn btn-secondary">
+                    <span>Get in Touch</span>
+                </a>
+            </div>
+            
+            <div class="hero-tech-stack">
+                <span class="tech-label">Core Technologies:</span>
+                <div class="tech-items">
+                    {% if tech_stack %}
+                        {% for tech in tech_stack %}
+                            <span class="tech-item">{{ tech.name }}</span>
+                        {% endfor %}
+                    {% else %}
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">Django</span>
+                        <span class="tech-item">LangChain</span>
+                        <span class="tech-item">LLaMA</span>
+                        <span class="tech-item">PostgreSQL</span>
+                        <span class="tech-item">RAG</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-visual">
+            <div class="profile-image-container">
+                <img src="/static/images/profile.png" alt="{% if profile %}{{ profile.name }}{% else %}Avanindra Vijay{% endif %}" class="profile-image">
+                <div class="profile-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span>Available</span>
+                </div>
+            </div>
+            
+            <div class="visual-card">
+                <div class="card-header">
+                    <div class="card-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="card-title">terminal ~ Type 'help' for commands</span>
+                </div>
+                <div class="card-content" id="terminalContent">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-text"> whoami</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-output">{% if profile %}{{ profile.name }}{% else %}Avanindra Vijay{% endif %} - Software Engineer & Data Scientist</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-output"> </span>
+                    </div>
+                    <div class="terminal-line terminal-input-line">
+                        <span class="terminal-prompt">$</span>
+                        <input type="text" class="terminal-input" id="terminalInput" placeholder="Type 'help' to start..." autocomplete="off" spellcheck="false">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home-highlights">
+    <div class="container">
+        <div class="highlights-grid">
+            {% if highlights %}
+                {% for highlight in highlights %}
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            {% if forloop.counter == 1 %}
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            {% elif forloop.counter == 2 %}
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            {% else %}
+                                <line x1="12" y1="20" x2="12" y2="10"></line>
+                                <line x1="18" y1="20" x2="18" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="16"></line>
+                            {% endif %}
+                        </svg>
+                    </div>
+                    <h3>{{ highlight.title }}</h3>
+                    <p>{{ highlight.description }}</p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        </svg>
+                    </div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Expertise in LLM integration, RAG pipelines, and fine-tuning models like LLaMA and CLIP for production applications</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>Full-Stack Development</h3>
+                    <p>Building scalable applications with Django, REST APIs, and modern frontend technologies with clean architecture</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="20" x2="12" y2="10"></line>
+                            <line x1="18" y1="20" x2="18" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="16"></line>
+                        </svg>
+                    </div>
+                    <h3>Data Analytics</h3>
+                    <p>Creating interactive dashboards and extracting insights from complex datasets using Python, Pandas, and Power BI</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="home-cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Let's Build Something Amazing Together</h2>
+            <p>I'm open to new opportunities and exciting projects. Let's discuss how I can contribute to your team.</p>
+            <div class="cta-actions">
+                <a href="/contact" class="btn btn-primary">
+                    <span>Start a Conversation</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </a>
+                <a href="/portfolio" class="btn btn-outline">View Portfolio</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

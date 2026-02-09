@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+
+{% block title %}Experience | {% if profile %}{{ profile.name }}{% else %}Avanindra Vijay{% endif %}{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Professional Experience</h1>
+        <p class="page-subtitle">My journey in software engineering and AI development</p>
+    </div>
+</section>
+
+<section class="experience-timeline">
+    <div class="container">
+        <div class="timeline">
+            {% if experiences %}
+                {% for exp in experiences %}
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        {% if exp.is_current %}
+                        <div class="timeline-badge">Current</div>
+                        {% endif %}
+                        
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>{{ exp.title }}</h3>
+                                <p class="timeline-company">{{ exp.company }}</p>
+                            </div>
+                            <span class="timeline-period">{{ exp.period }}</span>
+                        </div>
+                        
+                        {% if exp.description %}
+                        <p style="margin-bottom: 1rem;">{{ exp.description }}</p>
+                        {% endif %}
+                        
+                        {% for section in exp.sections.all %}
+                        <div class="timeline-section">
+                            <h4>{{ section.title }}</h4>
+                            <ul>
+                                {% for task in section.tasks.all %}
+                                <li>{{ task.description }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endfor %}
+                        
+                        {% if exp.technologies.all %}
+                        <div class="timeline-tech">
+                            {% for tech in exp.technologies.all %}
+                                <span>{{ tech.name }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                {# Default hardcoded experience if database is empty #}
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Current</div>
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Young Professional (Software Developer)</h3>
+                                <p class="timeline-company">BISAG-N (MeitY)</p>
+                            </div>
+                            <span class="timeline-period">August 2025 - Present</span>
+                        </div>
+                        
+                        <div class="timeline-section">
+                            <h4>AI, Machine Learning & NLP</h4>
+                            <ul>
+                                <li>Designed and developed LLM-powered intelligent chatbots using LLaMA, embeddings, and Retrieval-Augmented Generation (RAG)</li>
+                                <li>Implemented RAG pipelines for PDF summarization and contextual Q&A using semantic retrieval and vector databases</li>
+                                <li>Improved chatbot accuracy and relevance through prompt engineering, embedding optimization, and similarity search tuning</li>
+                                <li>Researched computer vision-based person identification techniques, comparing Sobel + SURF and Canny + PHOG methods</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-section">
+                            <h4>Backend & System Development</h4>
+                            <ul>
+                                <li>Built and deployed production-grade AI applications using Django, ensuring modular design and scalable REST APIs</li>
+                                <li>Designed end-to-end chatbot architectures integrating LLMs, databases, and vector stores</li>
+                                <li>Evaluated LangChain vs LangGraph for workflow orchestration, scalability, and long-context handling</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-section">
+                            <h4>Database & Data Engineering</h4>
+                            <ul>
+                                <li>Developed an AI-driven SQL Coder chatbot capable of generating, validating, and executing SQL queries from natural language</li>
+                                <li>Integrated relational databases for real-time data access and chatbot-driven analytics</li>
+                                <li>Created interactive analytics dashboards using Plotly and Pandas DataFrames for SQL insights</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-tech">
+                            <span>LLaMA</span>
+                            <span>Django</span>
+                            <span>RAG</span>
+                            <span>LangChain</span>
+                            <span>PostgreSQL</span>
+                            <span>Plotly</span>
+                            <span>VannaAI</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Software Developer Intern</h3>
+                                <p class="timeline-company">BISAG-N (MeitY)</p>
+                            </div>
+                            <span class="timeline-period">January 2025 - August 2025</span>
+                        </div>
+                        
+                        <div class="timeline-section">
+                            <h4>Key Achievements</h4>
+                            <ul>
+                                <li>Fine-tuned CLIP, LLaMA (3B), and mBERT models using Hugging Face and Ollama</li>
+                                <li>Improved intent recognition accuracy by 10% and user engagement by 12% in conversational AI systems</li>
+                                <li>Built a RASA-integrated RAG conversational chatbot for government citizen services</li>
+                                <li>Implemented context-aware responses using PostgreSQL-backed retrieval and semantic search</li>
+                                <li>Cleaned, processed, and analyzed large-scale grievance datasets using Pandas</li>
+                                <li>Visualized complaint trends to identify resolution bottlenecks and efficiency gaps</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-tech">
+                            <span>RASA</span>
+                            <span>CLIP</span>
+                            <span>mBERT</span>
+                            <span>Hugging Face</span>
+                            <span>Pandas</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Salesforce Developer Intern</h3>
+                                <p class="timeline-company">Deloitte</p>
+                            </div>
+                            <span class="timeline-period">May 2023 - July 2023</span>
+                        </div>
+                        
+                        <div class="timeline-section">
+                            <h4>Key Achievements</h4>
+                            <ul>
+                                <li>Automated workflows using Salesforce Flows, Apex, and Lightning Web Components (LWC)</li>
+                                <li>Delivered custom Salesforce solutions with 20% process efficiency improvement</li>
+                                <li>Achieved 98% deployment success rate across multiple projects</li>
+                                <li>Collaborated with cross-functional teams to implement enterprise CRM solutions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-tech">
+                            <span>Salesforce</span>
+                            <span>Apex</span>
+                            <span>Lightning Web Components</span>
+                            <span>Salesforce Flows</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Cyber Security Trainee</h3>
+                                <p class="timeline-company">Cisco</p>
+                            </div>
+                            <span class="timeline-period">March 2023 - April 2023</span>
+                        </div>
+                        
+                        <div class="timeline-section">
+                            <h4>Training Focus</h4>
+                            <ul>
+                                <li>Worked with IP protocols, routing, switching, and Ethernet technologies</li>
+                                <li>Trained in malware analysis, network security protocols, and threat mitigation</li>
+                                <li>Completed CCNA v7 certification training</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-tech">
+                            <span>CCNA</span>
+                            <span>Network Security</span>
+                            <span>Malware Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

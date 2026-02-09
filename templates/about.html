@@ -1,0 +1,272 @@
+{% extends "base.html" %}
+
+{% block title %}About Me | {% if profile %}{{ profile.name }}{% else %}Avanindra Vijay{% endif %}{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">About Me</h1>
+        <p class="page-subtitle">Software Engineer passionate about AI, Machine Learning, and Data Science</p>
+    </div>
+</section>
+
+<section class="about-intro">
+    <div class="container">
+        <div class="intro-grid">
+            <div class="intro-content">
+                <h2 class="section-title">Who I Am</h2>
+                {% if profile %}
+                    <p>{{ profile.about_intro }}</p>
+                    <p>{{ profile.about_details }}</p>
+                    <p>{{ profile.about_current }}</p>
+                {% else %}
+                    <p>
+                        I'm a software engineer specializing in artificial intelligence, machine learning, and data science. 
+                        With a strong foundation in computer science from KIIT Bhubaneswar (8.66 CGPA) and hands-on experience 
+                        at BISAG-N under the Ministry of Electronics and Information Technology, I focus on building intelligent 
+                        systems that solve real-world problems.
+                    </p>
+                    <p>
+                        My expertise spans from developing multilingual RAG-based conversational AI to creating comprehensive 
+                        data analytics pipelines. I'm passionate about leveraging cutting-edge technologies like LLMs, vector 
+                        databases, and computer vision to create impactful solutions for government and enterprise applications.
+                    </p>
+                    <p>
+                        Currently, I'm building production-grade AI applications using Django, implementing RAG pipelines for 
+                        semantic search, and fine-tuning large language models to improve accuracy and user experience.
+                    </p>
+                {% endif %}
+            </div>
+            
+            <div class="intro-stats">
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-number">{% if profile %}{{ profile.cgpa }}{% else %}8.66{% endif %}</div>
+                        <div class="stat-text">CGPA from KIIT</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">{% if education %}{{ education.end_year }}{% else %}2024{% endif %}</div>
+                        <div class="stat-text">B.Tech Graduated</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">{% if profile %}{{ profile.projects_count }}{% else %}5{% endif %}+</div>
+                        <div class="stat-text">Major Projects</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">{% if profile %}{{ profile.certifications_count }}{% else %}7{% endif %}+</div>
+                        <div class="stat-text">Certifications</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="expertise-section">
+    <div class="container">
+        <h2 class="section-title">Expertise Areas</h2>
+        
+        <div class="expertise-grid">
+            <div class="expertise-card">
+                <div class="expertise-header">
+                    <div class="expertise-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3>AI & Machine Learning</h3>
+                </div>
+                <ul class="expertise-list">
+                    <li>LLM-powered chatbot development using LLaMA and Mistral</li>
+                    <li>RAG pipeline implementation for semantic search</li>
+                    <li>Fine-tuning models (CLIP, mBERT, LLaMA) with Hugging Face</li>
+                    <li>Prompt engineering and embedding optimization</li>
+                    <li>Computer vision for person identification</li>
+                </ul>
+            </div>
+            
+            <div class="expertise-card">
+                <div class="expertise-header">
+                    <div class="expertise-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Backend Development</h3>
+                </div>
+                <ul class="expertise-list">
+                    <li>Production-grade Django applications with REST APIs</li>
+                    <li>End-to-end AI system architecture design</li>
+                    <li>Database integration (PostgreSQL, MySQL, Vector DBs)</li>
+                    <li>Workflow orchestration with LangChain and LangGraph</li>
+                    <li>Scalable and modular system design</li>
+                </ul>
+            </div>
+            
+            <div class="expertise-card">
+                <div class="expertise-header">
+                    <div class="expertise-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h3>Data Analysis</h3>
+                </div>
+                <ul class="expertise-list">
+                    <li>Data cleaning and preprocessing with Pandas</li>
+                    <li>Interactive dashboards using Plotly and Power BI</li>
+                    <li>Natural language to SQL query generation</li>
+                    <li>Statistical analysis and visualization</li>
+                    <li>Processing and analyzing 50K+ record datasets</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="skills-section">
+    <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        
+        <div class="skills-container">
+            {% if skill_categories %}
+                {% for category in skill_categories %}
+                <div class="skill-category">
+                    <h3 class="category-title">{{ category.name }}</h3>
+                    <div class="skill-tags">
+                        {% for skill in category.skills.all %}
+                            {% if skill.is_active %}
+                                <span class="skill-tag">{{ skill.name }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="skill-category">
+                    <h3 class="category-title">Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="category-title">AI & Machine Learning</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">LLaMA</span>
+                        <span class="skill-tag">Mistral</span>
+                        <span class="skill-tag">CLIP</span>
+                        <span class="skill-tag">RAG</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">LangGraph</span>
+                        <span class="skill-tag">Hugging Face</span>
+                        <span class="skill-tag">VannaAI</span>
+                        <span class="skill-tag">DeepSeek OCR</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="category-title">Frameworks & Libraries</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">RASA</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">Transformers</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="category-title">Databases</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Vector Databases</span>
+                        <span class="skill-tag">FAISS</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="category-title">Data Visualization</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Plotly</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="category-title">Developer Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">Jupyter Notebook</span>
+                        <span class="skill-tag">Postman</span>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="education-section">
+    <div class="container">
+        <h2 class="section-title">Education</h2>
+        
+        {% if education %}
+        <div class="education-card">
+            <div class="education-content">
+                <div class="education-header">
+                    <h3>{{ education.degree }} in {{ education.field }}</h3>
+                    <span class="education-year">{{ education.start_year }} - {{ education.end_year }}</span>
+                </div>
+                <p class="education-institution">{{ education.institution }}{% if education.location %}, {{ education.location }}{% endif %}</p>
+                <div class="education-details">
+                    {% if education.cgpa %}
+                    <div class="detail-item">
+                        <span class="detail-label">CGPA</span>
+                        <span class="detail-value">{{ education.cgpa }} / {{ education.max_cgpa }}</span>
+                    </div>
+                    {% endif %}
+                    {% if education.specialization %}
+                    <div class="detail-item">
+                        <span class="detail-label">Specialization</span>
+                        <span class="detail-value">{{ education.specialization }}</span>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="education-card">
+            <div class="education-content">
+                <div class="education-header">
+                    <h3>Bachelor of Technology in Computer Science Engineering</h3>
+                    <span class="education-year">2020 - 2024</span>
+                </div>
+                <p class="education-institution">Kalinga Institute of Industrial Technology (KIIT), Bhubaneswar, India</p>
+                <div class="education-details">
+                    <div class="detail-item">
+                        <span class="detail-label">CGPA</span>
+                        <span class="detail-value">8.66 / 10.0</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Specialization</span>
+                        <span class="detail-value">AI & Data Science</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

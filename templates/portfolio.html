@@ -1,0 +1,333 @@
+{% extends "base.html" %}
+
+{% block title %}Portfolio | Avanindra Vijay{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Project Portfolio</h1>
+        <p class="page-subtitle">Innovative solutions in AI, Machine Learning, and Data Analytics</p>
+    </div>
+</section>
+
+<section class="portfolio-grid-section">
+    <div class="container">
+        <div class="portfolio-grid">
+            <div class="project-card featured-project">
+                <div class="project-label">Featured Project</div>
+                <div class="project-number">01</div>
+                <h3 class="project-title">PMIS - Multilingual RAG-based AI Assistant</h3>
+                <p class="project-description">
+                    Advanced RAG pipeline using LangChain and LangGraph with CLIP-based image retrieval, 
+                    multilingual query handling with automatic language detection and translation, and hybrid 
+                    Rasa integration for government services. Implements OTP-based user verification and 
+                    API-driven JSON data access.
+                </p>
+                
+                <div class="project-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">35%</div>
+                        <div class="metric-label">Better Context Retention</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">90%+</div>
+                        <div class="metric-label">Intent Accuracy</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">40%</div>
+                        <div class="metric-label">Improved Fallback</div>
+                    </div>
+                </div>
+                
+                <div class="project-highlights">
+                    <h4>Key Highlights</h4>
+                    <ul>
+                        <li>Migrated from LangChain to LangGraph improving session context retention</li>
+                        <li>Implemented CLIP-based image retrieval for multimodal responses</li>
+                        <li>Enabled multilingual support with 90%+ accuracy across languages</li>
+                        <li>Reduced irrelevant retrievals by 30% through metadata chunking</li>
+                    </ul>
+                </div>
+                
+                <div class="project-tech-stack">
+                    <span>LangGraph</span>
+                    <span>CLIP</span>
+                    <span>FAISS</span>
+                    <span>Rasa</span>
+                    <span>Mistral</span>
+                    <span>LLaMA</span>
+                    <span>Qwen</span>
+                    <span>Deep Translator</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-number">02</div>
+                <h3 class="project-title">JK Samadhan - Grievance Analytics & RAG System</h3>
+                <p class="project-description">
+                    Comprehensive grievance analysis system processing 50K+ records with RAG-based 
+                    insights and automated visualization for tracking resolution patterns and 
+                    administrative response efficiency.
+                </p>
+                
+                <div class="project-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">50K+</div>
+                        <div class="metric-label">Records Processed</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">45%</div>
+                        <div class="metric-label">Quality Improvement</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">60%</div>
+                        <div class="metric-label">Time Saved</div>
+                    </div>
+                </div>
+                
+                <div class="project-tech-stack">
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>RAG</span>
+                    <span>Vector DB</span>
+                    <span>Matplotlib</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-number">03</div>
+                <h3 class="project-title">Raksha Yantra - Database & Document Assistant</h3>
+                <p class="project-description">
+                    Schema-aware SQL assistant converting natural language queries to accurate SQL, 
+                    with auto-visualization pipelines and OCR-based document search unifying 
+                    structured and unstructured data queries.
+                </p>
+                
+                <div class="project-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">50%</div>
+                        <div class="metric-label">SQL Accuracy</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">30%</div>
+                        <div class="metric-label">Reduced Errors</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">55%</div>
+                        <div class="metric-label">Analysis Efficiency</div>
+                    </div>
+                </div>
+                
+                <div class="project-highlights">
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Schema embeddings stored in vector database for precise retrieval</li>
+                        <li>CLIP embeddings to disambiguate schema references</li>
+                        <li>Benchmarked multiple LLMs for optimal performance</li>
+                    </ul>
+                </div>
+                
+                <div class="project-tech-stack">
+                    <span>SQL</span>
+                    <span>CLIP</span>
+                    <span>PandasAI</span>
+                    <span>OCR</span>
+                    <span>LLaMA 3.2</span>
+                    <span>Mistral 7B</span>
+                    <span>SQLCoder</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-number">04</div>
+                <h3 class="project-title">Pratibimb - CV-Based Person Identification</h3>
+                <p class="project-description">
+                    Research project comparing Sobel + SURF and Canny + PHOG pipelines for biometric 
+                    identification using dental and jaw structure features, demonstrating a cost-effective 
+                    alternative to traditional methods.
+                </p>
+                
+                <div class="project-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">2</div>
+                        <div class="metric-label">CV Pipelines</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">Cost</div>
+                        <div class="metric-label">Effective</div>
+                    </div>
+                </div>
+                
+                <div class="project-tech-stack">
+                    <span>OpenCV</span>
+                    <span>SURF</span>
+                    <span>PHOG</span>
+                    <span>Sobel</span>
+                    <span>Canny</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-number">05</div>
+                <h3 class="project-title">BIZINTEL360 - Sales & Business Analysis</h3>
+                <p class="project-description">
+                    Interactive Power BI dashboards analyzing 270+ transactions and $385K revenue, 
+                    tracking product performance, regional sales trends, and customer behavior patterns 
+                    for data-driven decision making.
+                </p>
+                
+                <div class="project-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">$385K</div>
+                        <div class="metric-label">Revenue Analyzed</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">270+</div>
+                        <div class="metric-label">Transactions</div>
+                    </div>
+                </div>
+                
+                <div class="project-highlights">
+                    <h4>Key Deliverables</h4>
+                    <ul>
+                        <li>Interactive dashboards for real-time business insights</li>
+                        <li>SQL data transformation and advanced joins</li>
+                        <li>Identified high-revenue categories and customer trends</li>
+                    </ul>
+                </div>
+                
+                <div class="project-tech-stack">
+                    <span>Power BI</span>
+                    <span>SQL</span>
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>Plotly</span>
+                    <span>DAX</span>
+                </div>
+            </div>
+                        <div class="project-card">
+                <div class="project-number">06</div>
+                <h3 class="project-title">Chatterly Bot – Conversational AI for Social Interaction</h3>
+                <p class="project-description">
+                Created a real-time multilingual AI chatbot with semantic retrieval, reducing latency by 6% and enhancing translation accuracy by 12%.
+                </p>
+                
+                <div class="project-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">6%</div>
+                        <div class="metric-label">Reducing Latency</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">12%</div>
+                        <div class="metric-label">Accuracy</div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="project-tech-stack">
+                    <span>Python</span>
+                    <span>LLAMA via Ollama</span>
+                    <span>Hugging Face</span>
+                    <span>FAISS</span>
+                    <span>Deep Translator</span>
+                    <span>LangDetect</span>
+                </div>
+            </div>
+                        <div class="project-card">
+                <div class="project-number">07</div>
+                <h3 class="project-title">Face & Frame - Face Recognition & Object Detection System</h3>
+                <p class="project-description">
+                Built a facial recognition system using DeepFace and OpenCV, improving accuracy by 25% through advanced preprocessing, and integrated YOLOv5 for real-time, high-precision multi-class object detection from live video streams.
+                </p>
+                
+                <div class="project-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">25%</div>
+                        <div class="metric-label">Improving Accuracy</div>
+                    </div>
+                </div>
+                
+                <div class="project-tech-stack">
+                    <span>Python</span>
+                    <span>DeepFace</span>
+                    <span>OpenCV</span>
+                    <span>NumPy</span>
+                    <span>Pandas</span>
+                    <span>YOLOv5</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-number">08</div>
+                <h3 class="project-title">Domino's Pizza Data Analysis</h3>
+                <p class="project-description">
+                Identified top pizza categories 16% sales; forecasted revenue trends to improve inventory planning.
+                Developed a time-series forecasting model to predict future revenue and optimize inventory planning, reducing supply chain inefficiencies.
+                </p>
+                
+                <div class="project-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">16%</div>
+                        <div class="metric-label">Revenue Trends</div>
+                    </div>
+                </div>
+                
+                <div class="project-tech-stack">
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>DAX</span>
+                    <span>Time Series Analysis</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-number">09</div>
+                <h3 class="project-title">Blinkit Sales Interactive Dashboard</h3>
+                <p class="project-description">
+                    Built dashboard uncovering 15+ revenue insights; flagged anomalies to minimize leakage.
+                    Applied anomaly detection techniques to flag irregular sales patterns, minimizing revenue leakage and improving business decisions.
+                </p>
+                
+                <div class="project-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">16%</div>
+                        <div class="metric-label">Revenue Insights</div>
+                    </div>
+                </div>
+                
+                <div class="project-tech-stack">
+                    <span>Python</span>
+                    <span>Power BI</span>
+                    <span>DAX</span>
+                    <span>Power Query</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-number">10</div>
+                <h3 class="project-title">Zomato Dataset Analysis</h3>
+                <p class="project-description">
+                    Analyzed restaurant data to uncover peak demand hours and trending cuisines, optimizing menu planning and promotional strategies.
+                    Created a predictive model for customer ratings, achieving 85% accuracy, supporting targeted quality improvements.
+                </p>
+                
+                <div class="project-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">85%</div>
+                        <div class="metric-label">Accuracy</div>
+                    </div>
+                </div>
+                
+                <div class="project-tech-stack">
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>NumPy</span>
+                    <span>Matplotlib</span>
+                    <span>Scikit-learn</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

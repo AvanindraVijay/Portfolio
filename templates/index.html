@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avanindra Vijay | Software Engineer & Data Scientist</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Your+Font&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                    <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+                <span class="brand-text">Avanindra Vijay</span>
+            </div>
+            
+            <nav class="nav-desktop">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                
+                <button class="kebab-menu" id="kebabMenu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <a href="mailto:vijayavanindra5793@gmail.com" class="sidebar-btn" title="Email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="sidebar-btn" title="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+        </a>
+        <a href="https://github.com/yourusername" target="_blank" class="sidebar-btn" title="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+        </a>
+    </aside>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-nav">
+            <a href="#home" class="mobile-link">Home</a>
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#experience" class="mobile-link">Experience</a>
+            <a href="#portfolio" class="mobile-link">Portfolio</a>
+            <a href="#certifications" class="mobile-link">Certifications</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="container">
+            <div class="home-content">
+                <div class="typing-container">
+                    <span class="code-bracket">&lt;</span>
+                    <h1 class="typing-text" id="typingText"></h1>
+                    <span class="code-bracket">/&gt;</span>
+                </div>
+                <p class="home-subtitle">Software Engineer & Data Scientist</p>
+                <p class="home-description">
+                    Crafting intelligent solutions with Python, SQL, and AI. Currently building 
+                    LLM-powered systems at <span class="highlight">BISAG-N (MeitY)</span>.
+                </p>
+                <div class="home-stats">
+                    <div class="stat-box">
+                        <span class="stat-icon"></span>
+                        <span class="stat-text">Open to Work</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-icon"></span>
+                        <span class="stat-text">8.66 CGPA</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-icon"></span>
+                        <span class="stat-text">Delhi, India</span>
+                    </div>
+                </div>
+                <div class="home-cta">
+                    <a href="#portfolio" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon"></div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Specialized in developing LLM-powered chatbots, RAG pipelines, and fine-tuning models like LLaMA, CLIP, and mBERT for production applications.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="card-icon"></div>
+                    <h3>Backend Development</h3>
+                    <p>Experienced in building scalable REST APIs with Django, integrating databases, and designing end-to-end AI application architectures.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="card-icon"></div>
+                    <h3>Data Analysis</h3>
+                    <p>Proficient in data cleaning, visualization, and creating interactive dashboards using Pandas, Plotly, and Power BI for actionable insights.</p>
+                </div>
+            </div>
+
+            <div class="about-journey">
+                <h3 class="subsection-title">My Journey</h3>
+                <p>
+                    I'm a software engineer specializing in AI, machine learning, and data science. With a strong foundation 
+                    in computer science from KIIT (8.66 CGPA) and hands-on experience at BISAG-N under MeitY, I focus on 
+                    building intelligent systems that solve real-world problems.
+                </p>
+                <p>
+                    My expertise spans from developing multilingual RAG-based conversational AI to creating comprehensive 
+                    data analytics pipelines. I'm passionate about leveraging cutting-edge technologies like LLMs, vector 
+                    databases, and computer vision to create impactful solutions for government and enterprise applications.
+                </p>
+            </div>
+
+            <div class="skills-preview">
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">Django</div>
+                <div class="skill-tag">LangChain</div>
+                <div class="skill-tag">LLaMA</div>
+                <div class="skill-tag">RAG</div>
+                <div class="skill-tag">SQL</div>
+                <div class="skill-tag">Pandas</div>
+                <div class="skill-tag">Vector DBs</div>
+                <div class="skill-tag">OpenCV</div>
+                <div class="skill-tag">Power BI</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Young Professional (Software Developer)</h3>
+                                <p class="company-name">BISAG-N (MeitY)</p>
+                            </div>
+                            <span class="timeline-date">Aug 2025 - Present</span>
+                        </div>
+                        
+                        <div class="experience-category">
+                            <h4>AI, Machine Learning & NLP</h4>
+                            <ul>
+                                <li>Designed and developed LLM-powered intelligent chatbots using LLaMA, embeddings, and RAG</li>
+                                <li>Implemented RAG pipelines for PDF summarization and contextual Q&A</li>
+                                <li>Improved chatbot accuracy through prompt engineering and similarity search tuning</li>
+                                <li>Researched computer vision-based person identification techniques</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-category">
+                            <h4>Backend & System Development</h4>
+                            <ul>
+                                <li>Built production-grade AI applications using Django with modular design and scalable REST APIs</li>
+                                <li>Designed end-to-end chatbot architectures integrating LLMs, databases, and vector stores</li>
+                                <li>Evaluated LangChain vs LangGraph for workflow orchestration and scalability</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-category">
+                            <h4>Database & Data Engineering</h4>
+                            <ul>
+                                <li>Developed AI-driven SQL Coder chatbot for natural language to SQL query generation</li>
+                                <li>Integrated relational databases for real-time data access in conversational AI systems</li>
+                                <li>Created interactive analytics dashboards using Plotly and Pandas</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-stack">
+                            <span>LLaMA</span>
+                            <span>Django</span>
+                            <span>RAG</span>
+                            <span>LangChain</span>
+                            <span>Vector DB</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Software Developer Intern</h3>
+                                <p class="company-name">BISAG-N (MeitY)</p>
+                            </div>
+                            <span class="timeline-date">Jan 2025 - Aug 2025</span>
+                        </div>
+                        
+                        <ul class="experience-list">
+                            <li>Fine-tuned CLIP, LLaMA (3B), and mBERT models using Hugging Face and Ollama</li>
+                            <li>Improved intent recognition accuracy by 10% and user engagement by 12%</li>
+                            <li>Built RASA-integrated RAG conversational chatbot for government citizen services</li>
+                            <li>Implemented context-aware responses using PostgreSQL-backed retrieval</li>
+                            <li>Cleaned and analyzed large-scale grievance datasets using Pandas</li>
+                        </ul>
+
+                        <div class="tech-stack">
+                            <span>RASA</span>
+                            <span>Hugging Face</span>
+                            <span>CLIP</span>
+                            <span>mBERT</span>
+                            <span>Pandas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Salesforce Developer Intern</h3>
+                                <p class="company-name">Deloitte</p>
+                            </div>
+                            <span class="timeline-date">May 2023 - Jul 2023</span>
+                        </div>
+                        
+                        <ul class="experience-list">
+                            <li>Automated workflows using Salesforce Flows, Apex, and Lightning Web Components</li>
+                            <li>Delivered custom Salesforce solutions with 20% process efficiency improvement</li>
+                            <li>Achieved 98% deployment success rate across multiple projects</li>
+                        </ul>
+
+                        <div class="tech-stack">
+                            <span>Salesforce</span>
+                            <span>Apex</span>
+                            <span>LWC</span>
+                            <span>Flows</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Cyber Security Trainee</h3>
+                                <p class="company-name">Cisco</p>
+                            </div>
+                            <span class="timeline-date">Mar 2023 - Apr 2023</span>
+                        </div>
+                        
+                        <ul class="experience-list">
+                            <li>Worked with IP protocols, routing, switching, and Ethernet technologies</li>
+                            <li>Trained in malware analysis, network security protocols, and threat mitigation</li>
+                        </ul>
+
+                        <div class="tech-stack">
+                            <span>CCNA</span>
+                            <span>Network Security</span>
+                            <span>Malware Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2 class="section-title">Key Projects</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card featured">
+                    <div class="project-header">
+                        <div class="project-number">01</div>
+                        <h3>PMIS – Multilingual RAG-based AI Assistant</h3>
+                    </div>
+                    <p class="project-description">
+                        Advanced RAG pipeline using LangChain and LangGraph with CLIP-based image retrieval, 
+                        multilingual query handling, and hybrid Rasa integration for government services.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">35%</span>
+                            <span class="metric-label">Better Context</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">90%+</span>
+                            <span class="metric-label">Intent Accuracy</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">40%</span>
+                            <span class="metric-label">Fallback Boost</span>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span>LangGraph</span>
+                        <span>CLIP</span>
+                        <span>FAISS</span>
+                        <span>Rasa</span>
+                        <span>Mistral</span>
+                        <span>LLaMA</span>
+                        <span>Qwen</span>
+                    </div>
+                    <div class="project-highlights">
+                        <div class="highlight">✓ Migrated from LangChain to LangGraph</div>
+                        <div class="highlight">✓ CLIP-based multimodal retrieval</div>
+                        <div class="highlight">✓ OTP-based user verification</div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">02</div>
+                        <h3>JK Samadhan – Grievance Analytics & RAG System</h3>
+                    </div>
+                    <p class="project-description">
+                        Comprehensive grievance analysis system processing 50K+ records with RAG-based 
+                        insights and automated visualization for tracking resolution patterns.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">50K+</span>
+                            <span class="metric-label">Records</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">45%</span>
+                            <span class="metric-label">Quality ↑</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">60%</span>
+                            <span class="metric-label">Time Saved</span>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>RAG</span>
+                        <span>Vector DB</span>
+                        <span>Matplotlib</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">03</div>
+                        <h3>Raksha Yantra – Database & Document Assistant</h3>
+                    </div>
+                    <p class="project-description">
+                        Schema-aware SQL assistant with natural language queries, auto-visualization 
+                        pipelines, and OCR-based document search unifying structured and unstructured data.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">50%</span>
+                            <span class="metric-label">SQL Accuracy</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">30%</span>
+                            <span class="metric-label">Less Errors</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">55%</span>
+                            <span class="metric-label">Efficiency</span>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span>SQL</span>
+                        <span>CLIP</span>
+                        <span>PandasAI</span>
+                        <span>OCR</span>
+                        <span>LLaMA 3.2</span>
+                        <span>Mistral 7B</span>
+                        <span>SQLCoder</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">04</div>
+                        <h3>Pratibimb – CV-Based Person Identification</h3>
+                    </div>
+                    <p class="project-description">
+                        Research project comparing Sobel + SURF and Canny + PHOG pipelines for biometric 
+                        identification using dental and jaw structure features.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">2</span>
+                            <span class="metric-label">Pipelines</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">Cost</span>
+                            <span class="metric-label">Effective</span>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span>OpenCV</span>
+                        <span>SURF</span>
+                        <span>PHOG</span>
+                        <span>Sobel</span>
+                        <span>Canny</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">05</div>
+                        <h3>BIZINTEL360 – Sales & Business Analysis</h3>
+                    </div>
+                    <p class="project-description">
+                        Interactive Power BI dashboards analyzing 270+ transactions and $385K revenue, 
+                        tracking product performance, regional sales, and customer behavior.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">$385K</span>
+                            <span class="metric-label">Revenue</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">270+</span>
+                            <span class="metric-label">Transactions</span>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span>Power BI</span>
+                        <span>SQL</span>
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Plotly</span>
+                        <span>DAX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <div class="cert-icon"></div>
+                    <h3>AWS Cloud Foundation</h3>
+                    <p class="cert-issuer">AWS Academics</p>
+                    <p class="cert-description">Cloud computing fundamentals and AWS core services architecture.</p>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon"></div>
+                    <h3>PCAP Programming Essentials in Python</h3>
+                    <p class="cert-issuer">OpenEDG</p>
+                    <p class="cert-description">Python programming fundamentals and best practices.</p>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon"></div>
+                    <h3>CCNA v7: Introduction to Networks</h3>
+                    <p class="cert-issuer">Cisco</p>
+                    <p class="cert-description">Networking fundamentals, IP protocols, and network security.</p>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon"></div>
+                    <h3>Generative AI</h3>
+                    <p class="cert-issuer">Microsoft & LinkedIn</p>
+                    <p class="cert-description">Generative AI concepts, applications, and implementation strategies.</p>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon"></div>
+                    <h3>Salesforce Developer</h3>
+                    <p class="cert-issuer">Deloitte</p>
+                    <p class="cert-description">Salesforce platform development, Apex, and Lightning components.</p>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon"></div>
+                    <h3>SQL</h3>
+                    <p class="cert-issuer">HackerRank</p>
+                    <p class="cert-description">Advanced SQL queries, database design, and optimization.</p>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon"></div>
+                    <h3>Data Analysis</h3>
+                    <p class="cert-issuer">Microsoft & LinkedIn</p>
+                    <p class="cert-description">Data analysis techniques, visualization, and insights extraction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            
+
+                <div class="contact-form-wrapper">
+                    <p class="contact-intro">
+                        I'm currently open to new opportunities and collaborations. 
+                        Feel free to reach out for projects, job opportunities, or just to connect!
+                    </p>
+                    
+<div class="contact-info-wrapper">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Delhi, Delhi, India</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+91 8881164451</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>vijayavanindra5793@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/yourusername" target="_blank" class="social-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+
+                </div>
+
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Avanindra Vijay. Built with passion for AI and innovation.</p>
+            <div class="footer-links">
+        <a href="mailto:vijayavanindra5793@gmail.com" class="sidebar-btn" title="Email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="sidebar-btn" title="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+        </a>
+        <a href="https://github.com/yourusername" target="_blank" class="sidebar-btn" title="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+        </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>

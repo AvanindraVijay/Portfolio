@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | {% if profile %}{{ profile.name }}{% else %}Avanindra Vijay{% endif %}{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Get in Touch</h1>
+        <p class="page-subtitle">Let's discuss how we can work together</p>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-layout">
+            <div class="contact-form-container">
+                <h2>Send Me a Message</h2>
+                <p class="form-intro">
+                    I'm currently open to new opportunities and exciting projects. 
+                    Fill out the form below and I'll get back to you as soon as possible.
+                </p>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project or opportunity..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <span>Send Message</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+                
+                <div class="form-message" id="formMessage"></div>
+            </div>
+            
+            <div class="contact-info-container">
+                <div class="contact-info-card">
+                    <h3>Contact Information</h3>
+                    <p>Feel free to reach out through any of these channels</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="method-details">
+                                <div class="method-label">Email</div>
+                                <a href="mailto:{% if profile %}{{ profile.email }}{% else %}vijayavanindra5793@gmail.com{% endif %}" class="method-value">
+                                    {% if profile %}{{ profile.email }}{% else %}vijayavanindra5793@gmail.com{% endif %}
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div class="method-details">
+                                <div class="method-label">Phone</div>
+                                <a href="tel:{% if profile %}{{ profile.phone }}{% else %}+918881164451{% endif %}" class="method-value">
+                                    {% if profile %}{{ profile.phone }}{% else %}+91 8881164451{% endif %}
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="method-details">
+                                <div class="method-label">Location</div>
+                                <div class="method-value">{% if profile %}{{ profile.location }}{% else %}Delhi, India{% endif %}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links-card">
+                    <h4>Connect on Social Media</h4>
+                    <div class="social-links">
+                        {% if profile and profile.linkedin_url %}
+                            <a href="{{ profile.linkedin_url }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                        {% else %}
+                            <a href="https://www.linkedin.com/in/vijayavanindra/" target="_blank" rel="noopener noreferrer" class="social-link">
+                        {% endif %}
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        {% if profile and profile.github_url %}
+                            <a href="{{ profile.github_url }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                        {% else %}
+                            <a href="https://github.com/AvanindraVijay" target="_blank" rel="noopener noreferrer" class="social-link">
+                        {% endif %}
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="availability-card">
+                    <div class="availability-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">{% if profile and profile.available_for_work %}Available for Work{% else %}Available for Work{% endif %}</span>
+                    </div>
+                    <p>
+                        I'm currently seeking full-time opportunities in AI/ML, 
+                        backend development, or data science roles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
